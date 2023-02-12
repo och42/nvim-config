@@ -96,6 +96,7 @@ vim.cmd([[colorscheme onedark]])
 vim.o.breakindent = true
 vim.o.completeopt = 'menuone,noselect'
 vim.o.ignorecase = true
+vim.o.laststatus = 3
 vim.o.mouse = 'a'
 vim.o.smartcase = true
 vim.o.splitbelow = true
