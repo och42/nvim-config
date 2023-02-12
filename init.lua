@@ -98,6 +98,7 @@ vim.o.completeopt = 'menuone,noselect'
 vim.o.ignorecase = true
 vim.o.laststatus = 3
 vim.o.mouse = 'a'
+vim.o.scrolloff = 2
 vim.o.smartcase = true
 vim.o.splitbelow = true
 vim.o.splitright = true
