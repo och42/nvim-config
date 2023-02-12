@@ -95,6 +95,7 @@ vim.api.nvim_create_autocmd('BufWritePost', {
 vim.cmd([[colorscheme onedark]])
 vim.o.breakindent = true
 vim.o.completeopt = 'menuone,noselect'
+vim.o.cursorline = true
 vim.o.ignorecase = true
 vim.o.laststatus = 3
 vim.o.mouse = 'a'
