@@ -53,6 +53,8 @@ require('packer').startup(function(use)
   use('numToStr/Comment.nvim') -- "gc" to comment visual regions/lines
   use('tpope/vim-sleuth') -- Detect tabstop and shiftwidth automatically
 
+  use('michaeljsmith/vim-indent-object')
+
   -- Fuzzy Finder (files, lsp, etc)
   use({ 'nvim-telescope/telescope.nvim', branch = '0.1.x', requires = { 'nvim-lua/plenary.nvim' } })
 
@@ -79,13 +81,13 @@ require('packer').startup(function(use)
       vim.g.neo_tree_remove_legacy_commands = 1
       vim.keymap.set('n', '<Leader><Tab>', ':Neotree toggle<CR>', { silent = true, noremap = true })
 
-      require('neo-tree').setup {
+      require('neo-tree').setup({
         window = {
           mappings = {
             ['o'] = 'open',
           },
         },
-      }
+      })
     end,
   })
 
