@@ -419,6 +419,10 @@ cmp.setup({
   },
 })
 
+-- Don't jump on word search.
+vim.keymap.set('n', '*', ':keepjumps normal! mi*`i<CR>')
+vim.keymap.set('n', 'g*', ':keepjumps normal! mig*`i<CR>')
+
 -- Save current buffer: Ctrl-S
 vim.keymap.set('n', '<C-s>', ':write<CR>')
 
