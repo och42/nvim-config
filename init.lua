@@ -117,6 +117,12 @@ vim.wo.signcolumn = 'yes'
 vim.g.mapleader = ' '
 vim.g.maplocalleader = ' '
 
+-- Trim trailing whitespaces on save
+vim.api.nvim_create_autocmd('BufWritePre', {
+  command = '%s/\\s\\+$//e',
+  pattern = '*',
+})
+
 -- Keymaps for better default experience
 vim.keymap.set({ 'n', 'v' }, '<Space>', '<Nop>', { silent = true })
 
