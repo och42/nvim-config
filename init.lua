@@ -62,6 +62,13 @@ require('packer').startup(function(use)
   use({ 'nvim-telescope/telescope-fzf-native.nvim', run = 'make', cond = vim.fn.executable('make') == 1 })
 
   use({
+    'windwp/nvim-autopairs',
+    config = function()
+      require('nvim-autopairs').setup()
+    end,
+  })
+
+  use({
     'kylechui/nvim-surround',
     tag = '*',
     config = function()
