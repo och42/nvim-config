@@ -426,5 +426,11 @@ vim.keymap.set('n', 'g*', ':keepjumps normal! mig*`i<CR>')
 -- Save current buffer: Ctrl-S
 vim.keymap.set('n', '<C-s>', ':write<CR>')
 
+-- Resize windows
+vim.keymap.set('n', '<M-j>', ':resize -3<CR>', { silent = true })
+vim.keymap.set('n', '<M-k>', ':resize +3<CR>', { silent = true })
+vim.keymap.set('n', '<M-h>', ':vertical resize -3<CR>', { silent = true })
+vim.keymap.set('n', '<M-l>', ':vertical resize +3<CR>', { silent = true })
+
 -- The line beneath this is called `modeline`. See `:help modeline`
 -- vim: ts=2 sts=2 sw=2 et
