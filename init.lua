@@ -30,6 +30,7 @@ require('packer').startup(function(use)
     'hrsh7th/nvim-cmp',
     requires = {
       'L3MON4D3/LuaSnip',
+      'hrsh7th/cmp-buffer',
       'hrsh7th/cmp-nvim-lsp',
       'saadparwaiz1/cmp_luasnip',
     },
@@ -233,7 +234,7 @@ require('gitsigns').setup({
     end, { expr = true })
 
     map('n', '<Leader>gb', function()
-      gs.blame_line { full = true }
+      gs.blame_line({ full = true })
     end)
   end,
 })
@@ -465,6 +466,7 @@ cmp.setup({
     end, { 'i', 's' }),
   }),
   sources = {
+    { name = 'buffer' },
     { name = 'nvim_lsp' },
     { name = 'luasnip' },
   },
