@@ -99,6 +99,7 @@ vim.o.cursorline = true
 vim.o.ignorecase = true
 vim.o.laststatus = 3
 vim.o.list = true
+vim.o.listchars = 'tab:» '
 vim.o.mouse = 'a'
 vim.o.scrolloff = 2
 vim.o.smartcase = true
