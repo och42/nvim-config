@@ -77,6 +77,15 @@ require('packer').startup(function(use)
     },
     config = function()
       vim.g.neo_tree_remove_legacy_commands = 1
+      vim.keymap.set('n', '<Leader><Tab>', ':Neotree toggle<CR>', { silent = true, noremap = true })
+
+      require('neo-tree').setup {
+        window = {
+          mappings = {
+            ['o'] = 'open',
+          },
+        },
+      }
     end,
   })
 
