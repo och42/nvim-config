@@ -67,6 +67,19 @@ require('packer').startup(function(use)
     end,
   })
 
+  use({
+    'nvim-neo-tree/neo-tree.nvim',
+    branch = 'v2.x',
+    requires = {
+      'MunifTanjim/nui.nvim',
+      'nvim-lua/plenary.nvim',
+      'nvim-tree/nvim-web-devicons',
+    },
+    config = function()
+      vim.g.neo_tree_remove_legacy_commands = 1
+    end,
+  })
+
   -- Add custom plugins to packer from ~/.config/nvim/lua/custom/plugins.lua
   local has_plugins, plugins = pcall(require, 'custom.plugins')
   if has_plugins then
