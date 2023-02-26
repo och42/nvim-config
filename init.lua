@@ -237,6 +237,8 @@ require('gitsigns').setup({
 -- [[ Configure Telescope ]]
 require('telescope').setup({
   defaults = {
+    layout_config = { prompt_position = 'top' },
+    sorting_strategy = 'ascending',
     mappings = {
       i = {
         ['<C-u>'] = false,
