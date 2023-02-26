@@ -419,5 +419,8 @@ cmp.setup({
   },
 })
 
+-- Save current buffer: Ctrl-S
+vim.keymap.set('n', '<C-s>', ':write<CR>')
+
 -- The line beneath this is called `modeline`. See `:help modeline`
 -- vim: ts=2 sts=2 sw=2 et
