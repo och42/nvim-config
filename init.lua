@@ -32,6 +32,7 @@ require('packer').startup(function(use)
       'L3MON4D3/LuaSnip',
       'hrsh7th/cmp-buffer',
       'hrsh7th/cmp-nvim-lsp',
+      'hrsh7th/cmp-path',
       'saadparwaiz1/cmp_luasnip',
     },
   })
@@ -467,6 +468,7 @@ cmp.setup({
   }),
   sources = {
     { name = 'buffer' },
+    { name = 'path' },
     { name = 'nvim_lsp' },
     { name = 'luasnip' },
   },
