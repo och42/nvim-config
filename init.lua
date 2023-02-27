@@ -478,6 +478,9 @@ cmp.setup({
 vim.keymap.set('n', '*', ':keepjumps normal! mi*`i<CR>')
 vim.keymap.set('n', 'g*', ':keepjumps normal! mig*`i<CR>')
 
+-- Copy filename: Ctrl-G
+vim.keymap.set('n', '<C-g>', ':let @+=@%<CR>:file<CR>', { silent = true })
+
 -- Save current buffer: Ctrl-S
 vim.keymap.set('n', '<C-s>', ':write<CR>')
 
