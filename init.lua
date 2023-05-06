@@ -503,5 +503,8 @@ vim.keymap.set('n', '<M-k>', ':resize +3<CR>', { silent = true })
 vim.keymap.set('n', '<M-h>', ':vertical resize -3<CR>', { silent = true })
 vim.keymap.set('n', '<M-l>', ':vertical resize +3<CR>', { silent = true })
 
+vim.keymap.set('n', 'n', 'nzz')
+vim.keymap.set('n', 'N', 'Nzz')
+
 -- The line beneath this is called `modeline`. See `:help modeline`
 -- vim: ts=2 sts=2 sw=2 et
