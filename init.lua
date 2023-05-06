@@ -481,7 +481,7 @@ cmp.setup({
     end, { 'i', 's' }),
   }),
   sources = {
-    { name = 'buffer' },
+    { name = 'buffer', max_item_count = 4 },
     { name = 'path' },
     { name = 'nvim_lsp' },
     { name = 'luasnip' },
