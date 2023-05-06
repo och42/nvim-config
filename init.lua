@@ -282,6 +282,9 @@ vim.keymap.set('n', '<Leader>sf', require('telescope.builtin').find_files, { des
 vim.keymap.set('n', '<Leader>ss', require('telescope.builtin').find_files, { desc = '[S]earch Files' })
 vim.keymap.set('n', '<Leader>sh', require('telescope.builtin').help_tags, { desc = '[S]earch [H]elp' })
 vim.keymap.set('n', '<Leader>sw', require('telescope.builtin').grep_string, { desc = '[S]earch current [W]ord' })
+vim.keymap.set('n', '<Leader>sW', function()
+  require('telescope.builtin').grep_string({ search = vim.fn.expand('<cWORD>') })
+end, { desc = '[S]earch current [W]ORD' })
 vim.keymap.set('n', '<Leader>sg', require('telescope.builtin').live_grep, { desc = '[S]earch by [G]rep' })
 vim.keymap.set('n', '<Leader>sd', require('telescope.builtin').diagnostics, { desc = '[S]earch [D]iagnostics' })
 
