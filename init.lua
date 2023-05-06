@@ -503,6 +503,8 @@ vim.keymap.set('n', '<M-k>', ':resize +3<CR>', { silent = true })
 vim.keymap.set('n', '<M-h>', ':vertical resize -3<CR>', { silent = true })
 vim.keymap.set('n', '<M-l>', ':vertical resize +3<CR>', { silent = true })
 
+vim.keymap.set('n', '<C-d>', '<C-d>zz')
+vim.keymap.set('n', '<C-u>', '<C-u>zz')
 vim.keymap.set('n', 'n', 'nzz')
 vim.keymap.set('n', 'N', 'Nzz')
 
