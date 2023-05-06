@@ -290,7 +290,7 @@ vim.keymap.set('n', '<Leader>sd', require('telescope.builtin').diagnostics, { de
 
 -- [[ Configure Treesitter ]]
 require('nvim-treesitter.configs').setup({
-  ensure_installed = { 'c', 'cpp', 'go', 'lua', 'python', 'rust', 'typescript', 'help', 'vim' },
+  ensure_installed = { 'c', 'cpp', 'go', 'lua', 'python', 'rust', 'typescript', 'vimdoc', 'vim' },
 
   highlight = { enable = true },
   indent = { enable = true, disable = { 'python' } },
