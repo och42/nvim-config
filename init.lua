@@ -142,6 +142,7 @@ vim.cmd([[colorscheme onedark]])
 vim.o.breakindent = true
 vim.o.completeopt = 'menuone,noselect'
 vim.o.cursorline = true
+vim.o.iskeyword = '@,48-57,_,192-255,-'
 vim.o.laststatus = 3
 vim.o.list = true
 vim.o.listchars = 'tab:» ,trail:•'
