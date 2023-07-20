@@ -11,7 +11,14 @@ if not vim.loop.fs_stat(lazypath) then
 end
 vim.opt.rtp:prepend(lazypath)
 
-require('lazy').setup()
+require('lazy').setup({
+  {
+    'navarasu/onedark.nvim',
+    config = function()
+      vim.cmd.colorscheme('onedark')
+    end,
+  },
+})
 
 -- [[ Setting options ]]
 vim.o.breakindent = true
