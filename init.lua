@@ -28,6 +28,7 @@ require('lazy').setup({
     event = 'VeryLazy',
     version = '*',
   },
+  { 'nvim-treesitter/nvim-treesitter', build = ':TSUpdate' },
   {
     'navarasu/onedark.nvim',
     config = function()
