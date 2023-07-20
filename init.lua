@@ -12,7 +12,15 @@ end
 vim.opt.rtp:prepend(lazypath)
 
 require('lazy').setup({
-  {'lewis6991/gitsigns.nvim', config = true},
+  {
+    'lewis6991/gitsigns.nvim',
+    opts = {
+      on_attach = function(bufnr)
+        vim.keymap.set('n', '[h', require('gitsigns').prev_hunk, { buffer = bufnr, desc = 'Go to previous [H]unk' })
+        vim.keymap.set('n', ']h', require('gitsigns').next_hunk, { buffer = bufnr, desc = 'Go to next [H]unk' })
+      end,
+    },
+  },
   {
     'navarasu/onedark.nvim',
     config = function()
