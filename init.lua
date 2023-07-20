@@ -21,7 +21,10 @@ require('lazy').setup({
       end,
     },
   },
-  { 'windwp/nvim-autopairs', config = true },
+  {
+    'windwp/nvim-autopairs',
+    config = true,
+  },
   {
     'kylechui/nvim-surround',
     config = true,
