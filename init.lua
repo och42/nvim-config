@@ -53,6 +53,11 @@ require('lazy').setup({
       vim.cmd.colorscheme('onedark')
     end,
   },
+  {
+    'nvim-telescope/telescope.nvim',
+    branch = '0.1.x',
+    dependencies = { 'nvim-lua/plenary.nvim' },
+  },
 })
 
 -- [[ Setting options ]]
