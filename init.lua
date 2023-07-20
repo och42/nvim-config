@@ -70,7 +70,6 @@ vim.wo.number = true
 vim.wo.signcolumn = 'yes'
 
 -- [[ Basic Keymaps ]]
--- Set <Space> as the leader key
 --  NOTE: Must happen before plugins are required (otherwise wrong leader will be used)
 vim.g.mapleader = ' '
 vim.g.maplocalleader = ' '
