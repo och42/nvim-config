@@ -11,6 +11,8 @@ if not vim.loop.fs_stat(lazypath) then
 end
 vim.opt.rtp:prepend(lazypath)
 
+require('lazy').setup()
+
 -- [[ Setting options ]]
 vim.o.breakindent = true
 vim.o.completeopt = 'menuone,noselect'
