@@ -12,6 +12,7 @@ end
 vim.opt.rtp:prepend(lazypath)
 
 require('lazy').setup({
+  {'lewis6991/gitsigns.nvim', config = true},
   {
     'navarasu/onedark.nvim',
     config = function()
