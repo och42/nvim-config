@@ -1,5 +1,4 @@
 -- [[ Setting options ]]
-vim.cmd([[colorscheme onedark]])
 vim.o.breakindent = true
 vim.o.completeopt = 'menuone,noselect'
 vim.o.cursorline = true
