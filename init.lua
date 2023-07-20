@@ -11,6 +11,11 @@ if not vim.loop.fs_stat(lazypath) then
 end
 vim.opt.rtp:prepend(lazypath)
 
+-- [[ Basic Keymaps ]]
+--  NOTE: Must happen before plugins are required (otherwise wrong leader will be used)
+vim.g.mapleader = ' '
+vim.g.maplocalleader = ' '
+
 require('lazy').setup({
   {
     'lewis6991/gitsigns.nvim',
@@ -68,11 +73,6 @@ vim.o.undofile = true
 vim.o.updatetime = 250
 vim.wo.number = true
 vim.wo.signcolumn = 'yes'
-
--- [[ Basic Keymaps ]]
---  NOTE: Must happen before plugins are required (otherwise wrong leader will be used)
-vim.g.mapleader = ' '
-vim.g.maplocalleader = ' '
 
 -- Trim trailing whitespaces on save
 vim.api.nvim_create_autocmd('BufWritePre', {
