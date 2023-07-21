@@ -14,11 +14,10 @@ vim.opt.rtp:prepend(lazypath)
 require('lazy').setup({
   {
     'lewis6991/gitsigns.nvim',
-    config = true,
     opts = {
       on_attach = function(bufnr)
-        vim.keymap.set('n', '[h', require('gitsigns').prev_hunk, { buffer = bufnr, desc = '[G]o to previous [H]unk' })
-        vim.keymap.set('n', ']h', require('gitsigns').next_hunk, { buffer = bufnr, desc = '[G]o to next [H]unk' })
+        vim.keymap.set('n', '[h', require('gitsigns').prev_hunk, { buffer = bufnr, desc = 'Go to previous [H]unk' })
+        vim.keymap.set('n', ']h', require('gitsigns').next_hunk, { buffer = bufnr, desc = 'Go to next [H]unk' })
       end,
     },
   },
