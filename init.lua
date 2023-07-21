@@ -34,6 +34,10 @@ require('lazy').setup({
     config = true,
   },
   {
+    'hrsh7th/nvim-cmp',
+    config = true,
+  },
+  {
     'kylechui/nvim-surround',
     config = true,
     event = 'VeryLazy',
