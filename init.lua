@@ -97,6 +97,7 @@ require('lazy').setup({
     'nvim-telescope/telescope-fzf-native.nvim',
     build = 'make',
   },
+  'towolf/vim-helm',
 })
 
 -- [[ Setting options ]]
