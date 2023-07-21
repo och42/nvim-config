@@ -93,6 +93,10 @@ require('lazy').setup({
       },
     },
   },
+  {
+    'nvim-telescope/telescope-fzf-native.nvim',
+    build = 'make',
+  },
 })
 
 -- [[ Setting options ]]
@@ -129,6 +133,9 @@ vim.api.nvim_create_autocmd('TextYankPost', {
   group = highlight_group,
   pattern = '*',
 })
+
+-- Enable telescope zf native, if installed
+require('telescope').load_extension('fzf')
 
 vim.keymap.set('n', '<Leader><Space>', require('telescope.builtin').buffers, { desc = '[ ] Find existing buffers' })
 vim.keymap.set('n', '<Leader>ss', require('telescope.builtin').find_files, { desc = '[S]earch Files' })
