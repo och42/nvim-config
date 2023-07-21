@@ -18,6 +18,10 @@ vim.g.maplocalleader = ' '
 
 require('lazy').setup({
   {
+    'numToStr/Comment.nvim',
+    config = true,
+  },
+  {
     'lewis6991/gitsigns.nvim',
     opts = {
       on_attach = function(bufnr)
