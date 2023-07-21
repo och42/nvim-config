@@ -35,7 +35,14 @@ require('lazy').setup({
   },
   {
     'hrsh7th/nvim-cmp',
-    config = true,
+    dependencies = {
+      'hrsh7th/cmp-buffer',
+    },
+    opts = {
+      sources = {
+        { name = 'buffer' },
+      },
+    },
   },
   {
     'kylechui/nvim-surround',
