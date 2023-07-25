@@ -137,7 +137,9 @@ vim.api.nvim_create_autocmd('TextYankPost', {
 
 require('telescope').load_extension('fzf')
 
-vim.keymap.set('n', '<Leader><Space>', require('telescope.builtin').buffers, { desc = '[ ] Find existing buffers' })
+vim.keymap.set('n', '<Leader><Space>', function()
+  require('telescope.builtin').buffers({ only_cwd = true })
+end, { desc = '[ ] Find existing buffers' })
 vim.keymap.set('n', '<Leader>ss', require('telescope.builtin').find_files, { desc = '[S]earch Files' })
 vim.keymap.set('n', '<Leader>sw', require('telescope.builtin').grep_string, { desc = '[S]earch current [W]ord' })
 vim.keymap.set('n', '<Leader>sW', function()
