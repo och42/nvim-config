@@ -43,12 +43,14 @@ require('lazy').setup({
       'hrsh7th/cmp-buffer',
       'hrsh7th/cmp-path',
     },
-    opts = {
-      sources = {
-        { name = 'buffer' },
-        { name = 'path' },
-      },
-    },
+    opts = function()
+      return {
+        sources = {
+          { name = 'buffer' },
+          { name = 'path' },
+        },
+      }
+    end,
   },
   {
     'kylechui/nvim-surround',
