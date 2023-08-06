@@ -45,6 +45,7 @@ require('lazy').setup({
     },
     opts = function()
       return {
+        mapping = require('cmp').mapping.preset.insert(),
         sources = {
           { name = 'buffer' },
           { name = 'path' },
