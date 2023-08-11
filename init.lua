@@ -55,6 +55,10 @@ require('lazy').setup({
   },
   {
     'neovim/nvim-lspconfig',
+    config = function()
+      local lspconfig = require('lspconfig')
+      lspconfig.phpactor.setup({})
+    end,
   },
   {
     'kylechui/nvim-surround',
