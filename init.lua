@@ -54,6 +54,9 @@ require('lazy').setup({
     end,
   },
   {
+    'neovim/nvim-lspconfig',
+  },
+  {
     'kylechui/nvim-surround',
     config = true,
     event = 'VeryLazy',
