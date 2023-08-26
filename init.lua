@@ -38,19 +38,39 @@ require('lazy').setup({
     config = true,
   },
   {
+    'L3MON4D3/LuaSnip',
+    config = function()
+      require('luasnip.loaders.from_vscode').lazy_load()
+    end,
+    dependencies = {
+      'rafamadriz/friendly-snippets',
+    },
+    version = '2.*',
+  },
+  {
     'hrsh7th/nvim-cmp',
     dependencies = {
       'hrsh7th/cmp-buffer',
       'hrsh7th/cmp-nvim-lsp',
       'hrsh7th/cmp-path',
+      'saadparwaiz1/cmp_luasnip',
     },
     opts = function()
+      local cmp = require('cmp')
       return {
-        mapping = require('cmp').mapping.preset.insert(),
+        mapping = cmp.mapping.preset.insert({
+          ['<CR>'] = cmp.mapping.confirm({}),
+        }),
+        snippet = {
+          expand = function(args)
+            require('luasnip').lsp_expand(args.body)
+          end,
+        },
         sources = {
           { name = 'buffer' },
           { name = 'nvim_lsp' },
           { name = 'path' },
+          { name = 'luasnip' },
         },
       }
     end,
@@ -76,15 +96,15 @@ require('lazy').setup({
         ensure_installed = { 'lua', 'vim', 'vimdoc' },
         highlight = { enable = true },
         indent = { enable = true },
-        incremental_selection = {
-          enable = true,
-          keymaps = {
-            init_selection = '<C-Space>',
-            node_decremental = '<M-Space>',
-            node_incremental = '<C-Space>',
-            scope_incremental = '<C-Space>',
-          },
-        },
+        -- incremental_selection = {
+        --   enable = true,
+        --   keymaps = {
+        --     init_selection = '<C-Space>',
+        --     node_decremental = '<M-Space>',
+        --     node_incremental = '<C-Space>',
+        --     scope_incremental = '<C-Space>',
+        --   },
+        -- },
       })
     end,
   },
