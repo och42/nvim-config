@@ -81,7 +81,10 @@ require('lazy').setup({
       {
         'williamboman/mason.nvim',
         config = true,
-      }
+      },
+      {
+        'williamboman/mason-lspconfig.nvim',
+      },
     },
     config = function()
       local lspconfig = require('lspconfig')
@@ -182,6 +185,19 @@ vim.api.nvim_create_autocmd('TextYankPost', {
   pattern = '*',
 })
 
+-- nvim-cmp supports additional completion capabilities, so broadcast that to servers
+local capabilities = vim.lsp.protocol.make_client_capabilities()
+capabilities = require('cmp_nvim_lsp').default_capabilities(capabilities)
+
+local mason_lspconfig = require('mason-lspconfig')
+mason_lspconfig.setup({})
+mason_lspconfig.setup_handlers({
+  function(server_name)
+    require('lspconfig')[server_name].setup({
+      capabilities = capabilities,
+    })
+  end,
+})
 require('telescope').load_extension('fzf')
 
 vim.keymap.set('n', '<Leader><Space>', function()
