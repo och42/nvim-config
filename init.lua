@@ -86,10 +86,6 @@ require('lazy').setup({
         'williamboman/mason-lspconfig.nvim',
       },
     },
-    config = function()
-      local lspconfig = require('lspconfig')
-      lspconfig.phpactor.setup({})
-    end,
   },
   {
     'kylechui/nvim-surround',
