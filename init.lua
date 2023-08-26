@@ -182,6 +182,8 @@ vim.keymap.set('n', '<leader>dd', function()
   vim.diagnostic.disable(0)
 end, { desc = '[D]isable [D]iagnostics' })
 
+vim.keymap.set('n', '<Leader>rn', vim.lsp.buf.rename, { desc = '[R]e[n]ame' })
+
 -- Don't jump on word search.
 vim.keymap.set('n', '*', ':keepjumps normal! mi*`i<CR>')
 vim.keymap.set('n', 'g*', ':keepjumps normal! mig*`i<CR>')
