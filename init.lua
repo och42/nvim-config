@@ -79,6 +79,11 @@ require('lazy').setup({
     'neovim/nvim-lspconfig',
     dependencies = {
       {
+        'j-hui/fidget.nvim',
+        config = true,
+        tag = 'legacy',
+      },
+      {
         'williamboman/mason.nvim',
         config = true,
       },
