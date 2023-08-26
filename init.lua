@@ -195,6 +195,11 @@ mason_lspconfig.setup_handlers({
   function(server_name)
     require('lspconfig')[server_name].setup({
       capabilities = capabilities,
+      settings = lsp_servers_configurations[server_name],
+      on_attach = function()
+        vim.keymap.set('n', 'K', vim.lsp.buf.hover, { desc = 'Hover Documentation' })
+        vim.keymap.set('n', '<C-k>', vim.lsp.buf.signature_help, { desc = 'Signature Documentation' })
+      end,
     })
   end,
 })
