@@ -199,6 +199,7 @@ mason_lspconfig.setup_handlers({
       on_attach = function()
         vim.keymap.set('n', 'K', vim.lsp.buf.hover, { desc = 'Hover Documentation' })
         vim.keymap.set('n', '<C-k>', vim.lsp.buf.signature_help, { desc = 'Signature Documentation' })
+        vim.keymap.set('n', '<Leader>rn', vim.lsp.buf.rename, { desc = '[R]e[n]ame' })
       end,
     })
   end,
@@ -228,8 +229,6 @@ vim.keymap.set('n', '<Leader>q', vim.diagnostic.setloclist, { desc = 'Open diagn
 vim.keymap.set('n', '<leader>dd', function()
   vim.diagnostic.disable(0)
 end, { desc = '[D]isable [D]iagnostics' })
-
-vim.keymap.set('n', '<Leader>rn', vim.lsp.buf.rename, { desc = '[R]e[n]ame' })
 
 -- Don't jump on word search.
 vim.keymap.set('n', '*', ':keepjumps normal! mi*`i<CR>')
