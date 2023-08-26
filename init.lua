@@ -77,6 +77,12 @@ require('lazy').setup({
   },
   {
     'neovim/nvim-lspconfig',
+    dependencies = {
+      {
+        'williamboman/mason.nvim',
+        config = true,
+      }
+    },
     config = function()
       local lspconfig = require('lspconfig')
       lspconfig.phpactor.setup({})
