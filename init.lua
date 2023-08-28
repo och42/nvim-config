@@ -202,6 +202,7 @@ mason_lspconfig.setup_handlers({
       capabilities = capabilities,
       settings = lsp_servers_configurations[server_name],
       on_attach = function()
+        vim.keymap.set('n', '<Leader>ca', vim.lsp.buf.code_action, { desc = '[C]ode [A]ction' })
         vim.keymap.set('n', 'K', vim.lsp.buf.hover, { desc = 'Hover Documentation' })
         vim.keymap.set('n', '<C-k>', vim.lsp.buf.signature_help, { desc = 'Signature Documentation' })
         vim.keymap.set('n', '<Leader>rn', vim.lsp.buf.rename, { desc = '[R]e[n]ame' })
