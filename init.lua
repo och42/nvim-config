@@ -67,10 +67,10 @@ require('lazy').setup({
           end,
         },
         sources = {
-          { name = 'buffer' },
           { name = 'nvim_lsp' },
-          { name = 'path' },
           { name = 'luasnip' },
+          { name = 'buffer' },
+          { name = 'path' },
         },
       }
     end,
