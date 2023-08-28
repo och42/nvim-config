@@ -43,13 +43,7 @@ vim.api.nvim_create_autocmd('BufWritePre', {
   pattern = '*',
 })
 
--- [[ Highlight on yank ]]
-vim.api.nvim_create_autocmd('TextYankPost', {
-  callback = function()
-    vim.highlight.on_yank()
-  end,
-  group = vim.api.nvim_create_augroup('YankHighlight', { clear = true }),
-})
+require('highlight-on-yank')
 
 -- Keymaps for better default experience
 vim.keymap.set({ 'n', 'v' }, '<Space>', '<Nop>', { silent = true })
