@@ -23,17 +23,19 @@ return {
 
     telescope.load_extension('fzf')
 
+    local builtin = require('telescope.builtin')
+
     vim.keymap.set('n', '<Leader><Space>', function()
-      require('telescope.builtin').buffers({ only_cwd = true })
+      builtin.buffers({ only_cwd = true })
     end)
-    vim.keymap.set('n', '<Leader>ss', require('telescope.builtin').find_files)
-    vim.keymap.set('n', '<Leader>sw', require('telescope.builtin').grep_string)
+    vim.keymap.set('n', '<Leader>ss', builtin.find_files)
+    vim.keymap.set('n', '<Leader>sw', builtin.grep_string)
     vim.keymap.set('n', '<Leader>sW', function()
-      require('telescope.builtin').grep_string({ search = vim.fn.expand('<cWORD>') })
+      builtin.grep_string({ search = vim.fn.expand('<cWORD>') })
     end)
-    vim.keymap.set('n', '<Leader>sh', require('telescope.builtin').help_tags)
-    vim.keymap.set('n', '<Leader>sg', require('telescope.builtin').live_grep)
-    vim.keymap.set('n', '<Leader>ds', require('telescope.builtin').lsp_document_symbols)
+    vim.keymap.set('n', '<Leader>sh', builtin.help_tags)
+    vim.keymap.set('n', '<Leader>sg', builtin.live_grep)
+    vim.keymap.set('n', '<Leader>ds', builtin.lsp_document_symbols)
   end,
 
   dependencies = {
