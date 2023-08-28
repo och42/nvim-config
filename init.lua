@@ -1,12 +1,10 @@
--- [[ Basic Keymaps ]]
---  NOTE: Must happen before plugins are required (otherwise wrong leader will be used)
+--  Setting mapleader must happen before plugins are required
 vim.g.mapleader = ' '
 vim.g.maplocalleader = ' '
 
 require('ensure-lazy')
 require('lazy').setup('plugins')
 
--- [[ Setting options ]]
 vim.o.breakindent = true
 vim.o.completeopt = 'menuone,noselect'
 vim.o.cursorline = true
@@ -28,10 +26,10 @@ vim.wo.signcolumn = 'yes'
 require('highlight-on-yank')
 require('trim-trailing-whitespaces')
 
--- Keymaps for better default experience
+-- Disable spacebar moves cursor
 vim.keymap.set({ 'n', 'v' }, '<Space>', '<Nop>', { silent = true })
 
--- Diagnostic keymaps
+-- Diagnostics
 vim.keymap.set('n', '[d', vim.diagnostic.goto_prev, { desc = 'Go to previous diagnostic message' })
 vim.keymap.set('n', ']d', vim.diagnostic.goto_next, { desc = 'Go to next diagnostic message' })
 vim.keymap.set('n', '<Leader>e', vim.diagnostic.open_float, { desc = 'Open floating diagnostic message' })
@@ -40,14 +38,14 @@ vim.keymap.set('n', '<leader>dd', function()
   vim.diagnostic.disable(0)
 end, { desc = '[D]isable [D]iagnostics' })
 
--- Don't jump on word search.
+-- Don't jump on word search
 vim.keymap.set('n', '*', ':keepjumps normal! mi*`i<CR>')
 vim.keymap.set('n', 'g*', ':keepjumps normal! mig*`i<CR>')
 
--- Copy filename: Ctrl-G
+-- Copy filename: Ctrl-G (and keep original behaviour)
 vim.keymap.set('n', '<C-g>', ':let @+=@%<CR>:file<CR>', { silent = true })
 
--- Save current buffer: Ctrl-S
+-- Save active buffer
 vim.keymap.set('n', '<C-s>', ':write<CR>')
 
 -- Resize windows
