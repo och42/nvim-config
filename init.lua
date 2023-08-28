@@ -23,11 +23,11 @@ vim.o.updatetime = 250
 vim.wo.number = true
 vim.wo.signcolumn = 'yes'
 
+require('ctrl-g-copies-filename')
+require('disable-spacebar-moves-cursor')
+require('disable-word-search-jump')
 require('highlight-on-yank')
 require('trim-trailing-whitespaces')
-
--- Disable spacebar moves cursor
-vim.keymap.set({ 'n', 'v' }, '<Space>', '<Nop>', { silent = true })
 
 -- Diagnostics
 vim.keymap.set('n', '[d', vim.diagnostic.goto_prev, { desc = 'Go to previous diagnostic message' })
@@ -37,13 +37,6 @@ vim.keymap.set('n', '<Leader>q', vim.diagnostic.setloclist, { desc = 'Open diagn
 vim.keymap.set('n', '<leader>dd', function()
   vim.diagnostic.disable(0)
 end, { desc = '[D]isable [D]iagnostics' })
-
--- Don't jump on word search
-vim.keymap.set('n', '*', ':keepjumps normal! mi*`i<CR>')
-vim.keymap.set('n', 'g*', ':keepjumps normal! mig*`i<CR>')
-
--- Copy filename: Ctrl-G (and keep original behaviour)
-vim.keymap.set('n', '<C-g>', ':let @+=@%<CR>:file<CR>', { silent = true })
 
 -- Save active buffer
 vim.keymap.set('n', '<C-s>', ':write<CR>')
