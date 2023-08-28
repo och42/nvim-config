@@ -29,17 +29,17 @@ require('disable-word-search-jump')
 require('highlight-on-yank')
 require('trim-trailing-whitespaces')
 
+-- Save active buffer
+vim.keymap.set('n', '<C-s>', ':write<CR>')
+
 -- Diagnostics
-vim.keymap.set('n', '[d', vim.diagnostic.goto_prev, { desc = 'Go to previous diagnostic message' })
 vim.keymap.set('n', ']d', vim.diagnostic.goto_next, { desc = 'Go to next diagnostic message' })
+vim.keymap.set('n', '[d', vim.diagnostic.goto_prev, { desc = 'Go to previous diagnostic message' })
 vim.keymap.set('n', '<Leader>e', vim.diagnostic.open_float, { desc = 'Open floating diagnostic message' })
 vim.keymap.set('n', '<Leader>q', vim.diagnostic.setloclist, { desc = 'Open diagnostics list' })
 vim.keymap.set('n', '<leader>dd', function()
   vim.diagnostic.disable(0)
 end, { desc = '[D]isable [D]iagnostics' })
-
--- Save active buffer
-vim.keymap.set('n', '<C-s>', ':write<CR>')
 
 -- Resize windows
 vim.keymap.set('n', '<M-j>', ':resize -3<CR>', { silent = true })
