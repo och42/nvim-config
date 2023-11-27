@@ -29,6 +29,8 @@ require('disable-word-search-jump')
 require('highlight-on-yank')
 require('trim-trailing-whitespaces')
 
+require('tabline')
+
 -- Save active buffer
 vim.keymap.set('n', '<C-s>', ':write<CR>')
 
