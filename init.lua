@@ -29,6 +29,7 @@ require('disable-word-search-jump')
 require('highlight-on-yank')
 require('trim-trailing-whitespaces')
 
+require('netrw')
 require('tabline')
 
 -- Save active buffer
