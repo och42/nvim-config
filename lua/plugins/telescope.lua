@@ -29,7 +29,7 @@ return {
       builtin.buffers({ only_cwd = true })
     end)
     vim.keymap.set('n', '<Leader>ss', builtin.find_files)
-    vim.keymap.set('n', '<Leader>sS', function ()
+    vim.keymap.set('n', '<Leader>sS', function()
       builtin.find_files({ hidden = true })
     end)
     vim.keymap.set('n', '<Leader>sw', builtin.grep_string)
