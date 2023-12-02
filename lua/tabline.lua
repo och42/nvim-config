@@ -30,9 +30,7 @@ function MyTabLine()
 endfunction
 
 function MyTabLabel(n)
-  let buflist = tabpagebuflist(a:n)
-  let winnr = tabpagewinnr(a:n)
-  return bufname(buflist[winnr - 1])
+  return fnamemodify(getcwd(-1, a:n), ':p:h:t')
 endfunction
 
 set tabline=%!MyTabLine()
