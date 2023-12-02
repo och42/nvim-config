@@ -39,6 +39,8 @@ return {
     vim.keymap.set('n', '<Leader>sh', builtin.help_tags)
     vim.keymap.set('n', '<Leader>sg', builtin.live_grep)
     vim.keymap.set('n', '<Leader>ds', builtin.lsp_document_symbols)
+
+    vim.keymap.set('n', 'gd', builtin.lsp_definitions)
   end,
 
   dependencies = {
