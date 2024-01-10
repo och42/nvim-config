@@ -30,7 +30,7 @@ function MyTabLine()
 endfunction
 
 function MyTabLabel(n)
-  return fnamemodify(getcwd(-1, a:n), ':p:h:t')
+  return a:n .. ':' .. fnamemodify(getcwd(-1, a:n), ':p:h:t')
 endfunction
 
 set tabline=%!MyTabLine()
