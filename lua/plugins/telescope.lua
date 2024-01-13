@@ -9,6 +9,12 @@ return {
       defaults = {
         layout_config = { prompt_position = 'top' },
         sorting_strategy = 'ascending',
+        mappings = {
+          i = {
+            ['<C-f>'] = 'results_scrolling_down',
+            ['<C-b>'] = 'results_scrolling_up',
+          },
+        },
       },
       pickers = {
         buffers = {
