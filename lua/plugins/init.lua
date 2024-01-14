@@ -19,4 +19,5 @@ return {
     end,
   },
   'towolf/vim-helm',
+  'michaeljsmith/vim-indent-object',
 }
