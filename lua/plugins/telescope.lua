@@ -52,6 +52,15 @@ return {
     vim.keymap.set('n', '<Leader>s', builtin.lsp_document_symbols, { desc = 'Telescope: LSP document [s]ymbols' })
     vim.keymap.set('n', '<Leader>S', builtin.lsp_workspace_symbols, { desc = 'Telescope: LSP workspace [S]ymbols' })
 
+    vim.keymap.set('n', '<Leader>/', builtin.search_history, { desc = 'Telescope: search [/] history' })
+    vim.keymap.set('n', '<Leader>c', builtin.command_history, { desc = 'Telescope: [c]ommand history' })
+    vim.keymap.set('n', '<Leader>j', builtin.jumplist, { desc = 'Telescope: [j]umplist history' })
+    vim.keymap.set('n', '<Leader>k', builtin.keymaps, { desc = 'Telescope: [k]eymaps' })
+    vim.keymap.set('n', '<Leader>l', builtin.filetypes, { desc = 'Telescope: filetype [l]anguage' })
+    vim.keymap.set('n', '<Leader>p', builtin.builtin, { desc = 'Telescope: [b]uiltin' })
+    vim.keymap.set('n', '<Leader>t', builtin.tagstack, { desc = 'Telescope: tagstack' })
+    vim.keymap.set('n', '<Leader>z', builtin.spell_suggest, { desc = 'Telescope: spell suggest' })
+
     vim.keymap.set('n', 'gd', builtin.lsp_definitions)
     vim.keymap.set('n', 'gr', builtin.lsp_references)
   end,
