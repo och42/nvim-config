@@ -31,6 +31,9 @@ return {
 
     local builtin = require('telescope.builtin')
 
+    vim.keymap.set('n', '<Leader>B', function()
+      builtin.buffers({ only_cwd = false })
+    end, { desc = 'Telescope: [b]uffers' })
     vim.keymap.set('n', '<Leader>b', function()
       builtin.buffers({ only_cwd = true })
     end, { desc = 'Telescope: [b]uffers' })
