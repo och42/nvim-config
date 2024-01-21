@@ -53,6 +53,7 @@ return {
     vim.keymap.set('n', '<Leader>S', builtin.lsp_workspace_symbols, { desc = 'Telescope: LSP workspace [S]ymbols' })
 
     vim.keymap.set('n', 'gd', builtin.lsp_definitions)
+    vim.keymap.set('n', 'gr', builtin.lsp_references)
   end,
 
   dependencies = {
