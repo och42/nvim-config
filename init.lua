@@ -3,7 +3,7 @@ vim.g.mapleader = ' '
 vim.g.maplocalleader = ' '
 
 require('ensure-lazy')
-require('lazy').setup('plugins')
+require('lazy').setup('plugins', { change_detection = { enabled = false } })
 
 vim.o.breakindent = true
 vim.o.completeopt = 'menuone,noselect'
