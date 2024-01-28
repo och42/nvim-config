@@ -30,6 +30,7 @@ vim.wo.signcolumn = 'yes'
 require('ctrl-g-copies-filename')
 require('disable-spacebar-moves-cursor')
 require('disable-word-search-jump')
+require('filetype-json')
 require('highlight-on-yank')
 require('trim-trailing-whitespaces')
 
