@@ -8,11 +8,6 @@ return {
     config = true,
   },
   {
-    'kylechui/nvim-surround',
-    config = true,
-    event = 'VeryLazy',
-  },
-  {
     'navarasu/onedark.nvim',
     config = function()
       vim.cmd.colorscheme('onedark')
