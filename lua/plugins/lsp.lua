@@ -36,10 +36,10 @@ return {
             capabilities = capabilities,
             settings = lsp_servers_configurations[server_name],
             on_attach = function(_, bufnr)
-              vim.keymap.set('n', '<Leader>ca', vim.lsp.buf.code_action, { buffer = bufnr })
+              vim.keymap.set('n', '<M-c>a', vim.lsp.buf.code_action, { buffer = bufnr })
               vim.keymap.set('n', 'K', vim.lsp.buf.hover, { buffer = bufnr })
               vim.keymap.set('n', '<C-k>', vim.lsp.buf.signature_help, { buffer = bufnr })
-              vim.keymap.set('n', '<Leader>rn', vim.lsp.buf.rename, { buffer = bufnr })
+              vim.keymap.set('n', '<M-r>n', vim.lsp.buf.rename, { buffer = bufnr })
             end,
           })
         end,
