@@ -32,13 +32,12 @@ require('disable-spacebar-moves-cursor')
 require('disable-word-search-jump')
 require('filetype-json')
 require('highlight-on-yank')
-require('trim-trailing-whitespaces')
 
 require('netrw')
 require('tabline')
 
--- Save active buffer
-vim.keymap.set('n', '<C-s>', ':write<CR>')
+-- Autotrim trailing whitespaces and save active buffer.
+vim.keymap.set('n', '<C-s>', ':%s/\\s\\+$//e<CR>:write<CR>')
 
 -- Diagnostics
 vim.keymap.set('n', ']d', vim.diagnostic.goto_next)
