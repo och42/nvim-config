@@ -33,6 +33,7 @@ require('disable-word-search-jump')
 require('highlight-on-yank')
 require('set-filetypes')
 
+require('filetype-go')
 require('netrw')
 require('tabline')
 
