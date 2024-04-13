@@ -37,8 +37,8 @@ require('filetype-go')
 require('netrw')
 require('tabline')
 
--- Autotrim trailing whitespaces and save active buffer.
-vim.keymap.set('n', '<C-s>', ':%s/\\s\\+$//e<CR>:write<CR>')
+--- Autotrim trailing whitespaces and save active buffer.
+vim.keymap.set('n', '<C-s>', ':keepjumps keeppatterns %s/\\s\\+$//e<CR>:write<CR>')
 
 -- Diagnostics
 vim.keymap.set('n', ']d', vim.diagnostic.goto_next)
