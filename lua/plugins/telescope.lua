@@ -11,8 +11,8 @@ return {
         sorting_strategy = 'ascending',
         mappings = {
           i = {
-            ['<C-f>'] = 'results_scrolling_down',
-            ['<C-b>'] = 'results_scrolling_up',
+            ['<M-d>'] = 'results_scrolling_down',
+            ['<M-u>'] = 'results_scrolling_up',
           },
         },
       },
