@@ -42,9 +42,13 @@ require('tabline')
 -- Diagnostics
 vim.keymap.set('n', ']d', vim.diagnostic.goto_next)
 vim.keymap.set('n', '[d', vim.diagnostic.goto_prev)
-vim.keymap.set('n', '<Leader>e', vim.diagnostic.open_float)
-vim.keymap.set('n', '<leader>dd', function()
-  vim.diagnostic.disable(0)
+vim.keymap.set('n', '\\D', vim.diagnostic.open_float)
+vim.keymap.set('n', '\\dx', function()
+  if vim.diagnostic.is_disabled() then
+    vim.diagnostic.enable(0)
+  else
+    vim.diagnostic.disable(0)
+  end
 end)
 
 -- Resize windows
