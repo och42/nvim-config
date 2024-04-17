@@ -16,6 +16,11 @@ return {
           },
         },
       },
+      extensions = {
+        ["ui-select"] = {
+          require("telescope.themes").get_dropdown({})
+        },
+      },
       pickers = {
         buffers = {
           mappings = {
@@ -31,6 +36,7 @@ return {
     })
 
     telescope.load_extension('fzf')
+    telescope.load_extension('ui-select')
 
     local builtin = require('telescope.builtin')
 
@@ -73,5 +79,8 @@ return {
       'nvim-telescope/telescope-fzf-native.nvim',
       build = 'make',
     },
+    {
+      'nvim-telescope/telescope-ui-select.nvim',
+    }
   },
 }
