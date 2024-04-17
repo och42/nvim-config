@@ -32,6 +32,7 @@ require('ctrl-s-trims-whitespaces-and-saves-file')
 require('disable-spacebar-moves-cursor')
 require('disable-word-search-jump')
 require('highlight-on-yank')
+require('i-shift-enter-inserts-newline-below')
 require('set-filetypes')
 
 require('filetype-go')
