@@ -34,6 +34,7 @@ require('disable-word-search-jump')
 require('highlight-on-yank')
 require('i-shift-enter-inserts-newline-below')
 require('set-filetypes')
+require('shift-enter-goes-upward')
 
 require('filetype-go')
 require('netrw')
