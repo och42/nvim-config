@@ -1,7 +1,3 @@
---  Setting mapleader must happen before plugins are required
-vim.g.mapleader = ' '
-vim.g.maplocalleader = ' '
-
 require('ensure-lazy')
 require('lazy').setup('plugins', { change_detection = { enabled = false } })
 
