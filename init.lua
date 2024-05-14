@@ -1,6 +1,3 @@
-require('ensure-lazy')
-require('lazy').setup('plugins', { change_detection = { enabled = false } })
-
 vim.o.breakindent = true
 vim.o.completeopt = 'menuone,noselect'
 vim.o.cursorline = true
@@ -22,6 +19,9 @@ vim.o.undofile = true
 vim.o.updatetime = 250
 vim.wo.number = true
 vim.wo.signcolumn = 'yes'
+
+require('ensure-lazy')
+require('lazy').setup('plugins', { change_detection = { enabled = false } })
 
 require('ctrl-g-copies-filename')
 require('ctrl-s-trims-whitespaces-and-saves-file')
