@@ -4,8 +4,8 @@ return {
   opts = {
     on_attach = function(bufnr)
       local gitsigns = require('gitsigns')
-      vim.keymap.set('n', '[h', gitsigns.prev_hunk)
-      vim.keymap.set('n', ']h', gitsigns.next_hunk)
+      vim.keymap.set('n', '[c', gitsigns.prev_hunk)
+      vim.keymap.set('n', ']c', gitsigns.next_hunk)
       vim.keymap.set('n', '\\gb', function()
         gitsigns.blame_line({ full = true })
       end)
