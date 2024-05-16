@@ -11,6 +11,7 @@ return {
         sorting_strategy = 'ascending',
         mappings = {
           i = {
+            ['<C-s>'] = 'file_split',
             ['<M-d>'] = 'results_scrolling_down',
             ['<M-u>'] = 'results_scrolling_up',
           },
