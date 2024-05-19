@@ -15,7 +15,6 @@ vim.o.softtabstop = 0
 vim.o.splitbelow = true
 vim.o.splitright = true
 vim.o.tabstop = 2
-vim.o.termguicolors = true
 vim.o.undofile = true
 vim.o.updatetime = 250
 vim.wo.number = true
@@ -39,21 +38,8 @@ require('tabline')
 
 
 -- Diagnostics
-vim.keymap.set('n', ']d', vim.diagnostic.goto_next)
-vim.keymap.set('n', '[d', vim.diagnostic.goto_prev)
-vim.keymap.set('n', '<C-w>d', vim.diagnostic.open_float)
-vim.keymap.set(
-  'n',
-  '<C-W><C-D>',
-  '<C-W>d',
-  { remap = true }
-)
 vim.keymap.set('n', '\\dx', function()
-  if vim.diagnostic.is_disabled() then
-    vim.diagnostic.enable(0)
-  else
-    vim.diagnostic.disable(0)
-  end
+  vim.diagnostic.enable(not vim.diagnostic.is_enabled())
 end)
 
 -- Resize windows
