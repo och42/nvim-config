@@ -37,7 +37,6 @@ return {
             settings = lsp_servers_configurations[server_name],
             on_attach = function(_, bufnr)
               vim.keymap.set('n', '<C-k>', vim.lsp.buf.signature_help, { buffer = bufnr })
-              vim.keymap.set('n', 'K', vim.lsp.buf.hover, { buffer = bufnr })
               vim.keymap.set('n', '\\ca', vim.lsp.buf.code_action, { buffer = bufnr })
               vim.keymap.set('n', '\\fm', vim.lsp.buf.format, { buffer = bufnr })
               vim.keymap.set('n', '\\rn', vim.lsp.buf.rename, { buffer = bufnr })
