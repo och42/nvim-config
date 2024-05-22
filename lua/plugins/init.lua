@@ -4,9 +4,6 @@ return {
     config = true,
   },
   {
-    'github/copilot.vim',
-  },
-  {
     'windwp/nvim-autopairs',
     config = true,
   },
