@@ -47,8 +47,11 @@ return {
     end,
 
     dependencies = {
-      'folke/neodev.nvim',
-      config = true,
+      {
+        "folke/lazydev.nvim",
+        config = true,
+        ft = "lua",
+      },
     },
   },
 }
