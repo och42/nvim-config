@@ -9,6 +9,13 @@ return {
     dependencies = {
       { 'nvim-lua/plenary.nvim' },
     },
-    opts = {}
+    opts = {
+      mappings = {
+        reset = {
+          normal = '',
+          insert = '',
+        }
+      }
+    }
   },
 }
