@@ -2,7 +2,7 @@ return {
   {
     'j-hui/fidget.nvim',
     event = 'LspAttach',
-    config = true,
+    opts = {},
   },
   {
     'neovim/nvim-lspconfig',
@@ -49,7 +49,7 @@ return {
     dependencies = {
       {
         "folke/lazydev.nvim",
-        config = true,
+        opts = {},
         ft = "lua",
       },
     },

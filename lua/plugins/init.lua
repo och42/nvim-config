@@ -1,7 +1,7 @@
 return {
   {
     'windwp/nvim-autopairs',
-    config = true,
+    opts = {},
   },
   {
     'navarasu/onedark.nvim',
