@@ -16,6 +16,9 @@ return {
           insert = '',
         }
       }
-    }
+    },
+    keys = {
+      { '<Space>aa', function() return require('CopilotChat').toggle() end, desc = 'CopilotChat: Toggle' },
+    },
   },
 }
