@@ -1,3 +1,7 @@
+--  Setting mapleader must happen before plugins are required
+vim.g.mapleader = ' '
+vim.g.maplocalleader = ' '
+
 vim.o.breakindent = true
 vim.o.completeopt = 'menuone,noselect'
 vim.o.cursorline = true
