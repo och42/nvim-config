@@ -41,20 +41,13 @@ return {
 
     local builtin = require('telescope.builtin')
 
-    vim.keymap.set('n', '<Space>/', builtin.search_history, { desc = 'Telescope: search [/] history' })
     vim.keymap.set('n', '<Space>B', builtin.buffers, { desc = 'Telescope: [b]uffers' })
     vim.keymap.set('n', '<Space>S', builtin.lsp_workspace_symbols, { desc = 'Telescope: LSP workspace [S]ymbols' })
-    vim.keymap.set('n', '<Space>c', builtin.command_history, { desc = 'Telescope: [c]ommand history' })
     vim.keymap.set('n', '<Space>f', builtin.find_files, { desc = 'Telescope: find [F]iles' })
     vim.keymap.set('n', '<Space>g', builtin.live_grep, { desc = 'Telescope: live [g]rep' })
     vim.keymap.set('n', '<Space>h', builtin.help_tags, { desc = 'Telescope: [h]elp tags' })
-    vim.keymap.set('n', '<Space>j', builtin.jumplist, { desc = 'Telescope: [j]umplist history' })
-    vim.keymap.set('n', '<Space>k', builtin.keymaps, { desc = 'Telescope: [k]eymaps' })
-    vim.keymap.set('n', '<Space>l', builtin.filetypes, { desc = 'Telescope: filetype [l]anguage' })
-    vim.keymap.set('n', '<Space>p', builtin.builtin, { desc = 'Telescope: [b]uiltin' })
     vim.keymap.set('n', '<Space>r', builtin.git_files, { desc = 'Telescope: git [r]epository files' })
     vim.keymap.set('n', '<Space>s', builtin.lsp_document_symbols, { desc = 'Telescope: LSP document [s]ymbols' })
-    vim.keymap.set('n', '<Space>t', builtin.tagstack, { desc = 'Telescope: tagstack' })
     vim.keymap.set('n', '<Space>w', builtin.grep_string, { desc = 'Telescope: grep string [w]ord under cursor' })
     vim.keymap.set('n', '<Space>z', builtin.spell_suggest, { desc = 'Telescope: spell suggest' })
 
