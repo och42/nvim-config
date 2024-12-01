@@ -15,7 +15,9 @@ return {
           normal = '',
           insert = '',
         }
-      }
+      },
+      question_header = "  User ",
+      answer_header = "  Copilot ",
     },
     keys = {
       { '<Space>aa', function() return require('CopilotChat').toggle() end, desc = 'CopilotChat: Toggle' },
