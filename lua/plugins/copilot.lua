@@ -19,7 +19,7 @@ return {
   {
     'CopilotC-Nvim/CopilotChat.nvim',
     event = 'VeryLazy',
-    branch = 'canary',
+    branch = 'main',
     dependencies = {
       { 'nvim-lua/plenary.nvim' },
     },
@@ -34,7 +34,7 @@ return {
       answer_header = "  Copilot ",
     },
     keys = {
-      { '<Space>aa', function() return require('CopilotChat').toggle() end, desc = ' Toggle (CopilotChat)' },
+      { '<Space>aa', function() return require('CopilotChat').toggle() end, desc = ' Toggle Chat Window (CopilotChat)' },
       { '<Space>ad', M.pick('help'),                                        desc = ' Diagnostic Help (CopilotChat)' },
       { '<Space>ap', M.pick('prompt'),                                      desc = ' Prompt Actions (CopilotChat)' },
       { '<Space>ax', function() return require('CopilotChat').reset() end,  desc = ' Reset (CopilotChat)' },
