@@ -1,11 +1,13 @@
+local partial = require('plenary.functional').partial
+
 return {
   'lewis6991/gitsigns.nvim',
 
   opts = {
     on_attach = function(bufnr)
       local gitsigns = require('gitsigns')
-      vim.keymap.set('n', '[c', gitsigns.prev_hunk)
-      vim.keymap.set('n', ']c', gitsigns.next_hunk)
+      vim.keymap.set('n', '[c', partial(gitsigns.nav_hunk, 'prev'))
+      vim.keymap.set('n', ']c', partial(gitsigns.nav_hunk, 'next'))
       vim.keymap.set('n', '<Space>gb', function()
         gitsigns.blame_line({ full = true })
       end, { desc = ' Blame' })
@@ -15,3 +17,4 @@ return {
     end,
   },
 }
+
