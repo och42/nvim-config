@@ -43,9 +43,9 @@ require('tabline')
 
 
 -- Diagnostics
-vim.keymap.set('n', '\\dx', function()
+vim.keymap.set('n', '<Space>dx', function()
   vim.diagnostic.enable(not vim.diagnostic.is_enabled())
-end)
+end, { desc = ' Toggle' })
 
 -- Resize windows
 vim.keymap.set('n', '<M-j>', ':resize -3<CR>', { silent = true })

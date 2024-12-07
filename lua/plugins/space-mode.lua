@@ -5,6 +5,7 @@ return {
     opts = {
       spec = {
         { '<Space>a', group = ' AI assistance…' },
+        { '<Space>d', group = ' Diagnostics…' },
         { '<Space>c', group = ' Code…' },
         { '<Space>f', group = ' Find file…' },
         { '<Space>g', group = ' Git…' },
