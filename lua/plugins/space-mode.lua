@@ -4,17 +4,16 @@ return {
     event = 'VeryLazy',
     opts = {
       spec = {
-        { '<Space>a', group = ' AI assistance…' },
-        { '<Space>d', group = ' Diagnostics…' },
-        { '<Space>c', group = ' Code…' },
-        { '<Space>f', group = ' Find file…' },
-        { '<Space>g', group = ' Git…' },
-        { '<Space>s', group = ' Search for…' },
+        { '<Space>', group = ' Search…' },
+        { '\\a', group = ' AI assistance…' },
+        { '\\c', group = ' Code…' },
+        { '\\d', group = ' Diagnostics…' },
+        { '\\g', group = ' Git…' },
       },
     },
     keys = {
       {
-        '<Space>?',
+        '\\?',
         function()
           require('which-key').show({ global = false })
         end,

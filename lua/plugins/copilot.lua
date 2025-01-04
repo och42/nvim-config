@@ -34,10 +34,10 @@ return {
       answer_header = "  Copilot ",
     },
     keys = {
-      { '<Space>aa', function() return require('CopilotChat').toggle() end, desc = ' Toggle Chat Window (CopilotChat)' },
-      { '<Space>ad', M.pick('help'),                                        desc = ' Diagnostic Help (CopilotChat)' },
-      { '<Space>ap', M.pick('prompt'),                                      desc = ' Prompt Actions (CopilotChat)' },
-      { '<Space>ax', function() return require('CopilotChat').reset() end,  desc = ' Reset (CopilotChat)' },
+      { '\\aa', function() return require('CopilotChat').toggle() end, desc = ' Toggle Chat Window (CopilotChat)' },
+      { '\\ad', M.pick('help'),                                        desc = ' Diagnostic Help (CopilotChat)' },
+      { '\\ap', M.pick('prompt'),                                      desc = ' Prompt Actions (CopilotChat)' },
+      { '\\ax', function() return require('CopilotChat').reset() end,  desc = ' Reset (CopilotChat)' },
     },
   },
 }
