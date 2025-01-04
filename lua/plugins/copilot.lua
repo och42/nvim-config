@@ -14,30 +14,42 @@ end
 
 return {
   {
-    'github/copilot.vim',
+    "github/copilot.vim",
   },
   {
-    'CopilotC-Nvim/CopilotChat.nvim',
-    event = 'VeryLazy',
-    branch = 'main',
+    "CopilotC-Nvim/CopilotChat.nvim",
+    event = "VeryLazy",
+    branch = "main",
     dependencies = {
-      { 'nvim-lua/plenary.nvim' },
+      { "nvim-lua/plenary.nvim" },
     },
     opts = {
       mappings = {
         reset = {
-          normal = '',
-          insert = '',
-        }
+          normal = "",
+          insert = "",
+        },
       },
       question_header = "  User ",
       answer_header = "  Copilot ",
     },
     keys = {
-      { '\\aa', function() return require('CopilotChat').toggle() end, desc = ' Toggle Chat Window (CopilotChat)' },
-      { '\\ad', M.pick('help'),                                        desc = ' Diagnostic Help (CopilotChat)' },
-      { '\\ap', M.pick('prompt'),                                      desc = ' Prompt Actions (CopilotChat)' },
-      { '\\ax', function() return require('CopilotChat').reset() end,  desc = ' Reset (CopilotChat)' },
+      {
+        "\\aa",
+        function()
+          return require("CopilotChat").toggle()
+        end,
+        desc = " Toggle Chat Window (CopilotChat)",
+      },
+      { "\\ad", M.pick("help"), desc = " Diagnostic Help (CopilotChat)" },
+      { "\\ap", M.pick("prompt"), desc = " Prompt Actions (CopilotChat)" },
+      {
+        "\\ax",
+        function()
+          return require("CopilotChat").reset()
+        end,
+        desc = " Reset (CopilotChat)",
+      },
     },
   },
 }

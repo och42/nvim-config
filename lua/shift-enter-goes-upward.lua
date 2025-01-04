@@ -1,1 +1,1 @@
-vim.keymap.set('n', '<S-Enter>', 'k')
+vim.keymap.set("n", "<S-Enter>", "k")

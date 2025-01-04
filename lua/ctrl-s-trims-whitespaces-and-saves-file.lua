@@ -1,6 +1,6 @@
 local function trimWhitespacesAndSaveFile()
-  vim.cmd('keepjumps keeppatterns %s/\\s\\+$//e')
+  vim.cmd("keepjumps keeppatterns %s/\\s\\+$//e")
   vim.cmd.write()
 end
 
-vim.keymap.set('n', '<C-s>', trimWhitespacesAndSaveFile)
+vim.keymap.set("n", "<C-s>", trimWhitespacesAndSaveFile)

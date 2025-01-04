@@ -1,21 +1,21 @@
 return {
   {
-    'windwp/nvim-autopairs',
+    "windwp/nvim-autopairs",
     opts = {},
   },
   {
-    'kylechui/nvim-surround',
+    "kylechui/nvim-surround",
     config = true,
-    event = 'VeryLazy',
+    event = "VeryLazy",
   },
   {
-    'navarasu/onedark.nvim',
+    "navarasu/onedark.nvim",
     config = function()
-      vim.cmd.colorscheme('onedark')
+      vim.cmd.colorscheme("onedark")
     end,
     lazy = false,
     priority = 1000,
   },
-  'towolf/vim-helm',
-  'michaeljsmith/vim-indent-object',
+  "towolf/vim-helm",
+  "michaeljsmith/vim-indent-object",
 }
