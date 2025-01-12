@@ -18,7 +18,6 @@ return {
   },
   {
     "CopilotC-Nvim/CopilotChat.nvim",
-    event = "VeryLazy",
     branch = "main",
     dependencies = {
       { "nvim-lua/plenary.nvim" },
