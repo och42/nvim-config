@@ -8,10 +8,10 @@ return {
       local gitsigns = require("gitsigns")
       vim.keymap.set("n", "[c", partial(gitsigns.nav_hunk, "prev"))
       vim.keymap.set("n", "]c", partial(gitsigns.nav_hunk, "next"))
-      vim.keymap.set("n", "\\gb", function()
+      vim.keymap.set("n", "<Space><Space>gb", function()
         gitsigns.blame_line({ full = true })
       end, { desc = " Blame" })
-      vim.keymap.set("n", "\\gB", function()
+      vim.keymap.set("n", "<Space><Space>gB", function()
         gitsigns.blame_line({ full = true, ignore_whitespace = true })
       end, { desc = " Blame (ignore whitespace)" })
     end,
