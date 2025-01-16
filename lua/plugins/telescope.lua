@@ -41,11 +41,14 @@ return {
 
     local builtin = require("telescope.builtin")
 
+    vim.keymap.set("n", "<Space>/", builtin.current_buffer_fuzzy_find, { desc = " fuzzy find" })
     vim.keymap.set("n", "<Space>B", builtin.buffers, { desc = " Buffers (all tabs)" })
     vim.keymap.set("n", "<Space>S", builtin.lsp_workspace_symbols, { desc = " Symbols (workspace)" })
+    vim.keymap.set("n", "<Space>c", builtin.command_history, { desc = " commands history" })
     vim.keymap.set("n", "<Space>f", builtin.find_files, { desc = " Filesystem" })
     vim.keymap.set("n", "<Space>g", builtin.live_grep, { desc = " grep" })
     vim.keymap.set("n", "<Space>h", builtin.help_tags, { desc = " help" })
+    vim.keymap.set("n", "<Space>l", builtin.filetypes, { desc = " languages filetypes" })
     vim.keymap.set("n", "<Space>r", builtin.git_files, { desc = " Repository" })
     vim.keymap.set("n", "<Space>s", builtin.lsp_document_symbols, { desc = " Symbols (document)" })
     vim.keymap.set("n", "<Space>w", builtin.grep_string, { desc = " word" })
