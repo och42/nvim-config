@@ -4,6 +4,16 @@ return {
     build = "make install_jsregexp",
     config = function()
       require("luasnip.loaders.from_vscode").lazy_load()
+      require("luasnip").setup({
+        ft_func = function()
+          if vim.bo.filetype == "eruby" then
+            if string.match(vim.fn.expand('%:p'), "%.html%.erb$") then
+              return {"eruby", "html"}
+            end
+          end
+          return {vim.bo.filetype}
+        end
+      })
     end,
     dependencies = {
       "rafamadriz/friendly-snippets",
