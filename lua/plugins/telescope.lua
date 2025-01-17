@@ -11,9 +11,12 @@ return {
         sorting_strategy = "ascending",
         mappings = {
           i = {
+            ["<C-d>"] = "results_scrolling_down",
+            ["<C-u>"] = "results_scrolling_up",
+            ["<M-d>"] = "preview_scrolling_down",
+            ["<M-u>"] = "preview_scrolling_up",
             ["<C-s>"] = "file_split",
-            ["<M-d>"] = "results_scrolling_down",
-            ["<M-u>"] = "results_scrolling_up",
+            ["<C-x>"] = false, -- Default file_split keymap
           },
         },
       },
