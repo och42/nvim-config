@@ -14,8 +14,12 @@ return {
             ["<C-u>"] = "results_scrolling_up",
             ["<M-d>"] = "preview_scrolling_down",
             ["<M-u>"] = "preview_scrolling_up",
+            ["<M-h>"] = "preview_scrolling_left",
+            ["<M-l>"] = "preview_scrolling_right",
             ["<C-s>"] = "file_split",
             ["<C-x>"] = false, -- Default file_split keymap
+            ["<C-f>"] = false, -- Default preview_scrolling_left keymap
+            ["<C-k>"] = false, -- Default preview_scrolling_right keymap
           },
         },
       },
