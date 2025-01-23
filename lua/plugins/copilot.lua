@@ -35,16 +35,16 @@ return {
     },
     keys = {
       {
-        "<Space><Space>aa",
+        "<Space>aa",
         function()
           return require("CopilotChat").toggle()
         end,
         desc = " Toggle Chat Window (CopilotChat)",
       },
-      { "<Space><Space>ad", M.pick("help"), desc = " Diagnostic Help (CopilotChat)" },
-      { "<Space><Space>ap", M.pick("prompt"), desc = " Prompt Actions (CopilotChat)" },
+      { "<Space>ad", M.pick("help"), desc = " Diagnostic Help (CopilotChat)" },
+      { "<Space>ap", M.pick("prompt"), desc = " Prompt Actions (CopilotChat)" },
       {
-        "<Space><Space>ax",
+        "<Space>ax",
         function()
           return require("CopilotChat").reset()
         end,
