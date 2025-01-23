@@ -15,6 +15,11 @@ end
 return {
   {
     "github/copilot.vim",
+    config = function()
+      vim.keymap.set("n", "<Space>as", ':Copilot panel<CR>', {
+        desc = " Copilot suggestions",
+      })
+    end,
   },
   {
     "CopilotC-Nvim/CopilotChat.nvim",
