@@ -48,7 +48,7 @@ require("netrw")
 require("tabline")
 
 -- Diagnostics
-vim.keymap.set("n", "<Space><Space>dx", function()
+vim.keymap.set("n", "<Space>dx", function()
   vim.diagnostic.enable(not vim.diagnostic.is_enabled())
 end, { desc = " Toggle" })
 
