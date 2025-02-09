@@ -29,6 +29,10 @@ return {
     },
     opts = {
       mappings = {
+        accept_diff = {
+          normal = "",
+          insert = "",
+        },
         reset = {
           normal = "",
           insert = "",
