@@ -25,7 +25,12 @@ vim.wo.number = true
 vim.wo.signcolumn = "yes"
 
 require("ensure-lazy")
-require("lazy").setup("plugins", { change_detection = { enabled = false } })
+require("lazy").setup("plugins", {
+  change_detection = { enabled = false },
+  ui = {
+    border = "rounded"
+  }
+})
 
 require("ctrl-g-copies-filename")
 require("ctrl-s-trims-whitespaces-and-saves-file")

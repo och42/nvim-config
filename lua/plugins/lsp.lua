@@ -14,7 +14,11 @@ return {
     "williamboman/mason-lspconfig.nvim",
 
     config = function()
-      require("mason").setup({})
+      require("mason").setup({
+        ui = {
+          border = "rounded"
+        }
+      })
 
       -- nvim-cmp supports additional completion capabilities, so broadcast that to servers
       local client_capabilities = vim.lsp.protocol.make_client_capabilities()
