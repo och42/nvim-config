@@ -15,11 +15,16 @@ end
 return {
   {
     "github/copilot.vim",
-    config = function()
-      vim.keymap.set("n", "<Space>as", ':Copilot panel<CR>', {
+    keys = {
+      {
+        "<Space>as",
+        function()
+          vim.cmd("Copilot panel")
+        end,
         desc = " Copilot suggestions",
-      })
-    end,
+        mode = { "n", "v" },
+      },
+    }
   },
   {
     "CopilotC-Nvim/CopilotChat.nvim",
@@ -49,15 +54,27 @@ return {
           return require("CopilotChat").toggle()
         end,
         desc = " Toggle Chat Window (CopilotChat)",
+        mode = { "n", "v" },
       },
-      { "<Space>ad", M.pick("help"), desc = " Diagnostic Help (CopilotChat)" },
-      { "<Space>ap", M.pick("prompt"), desc = " Prompt Actions (CopilotChat)" },
+      {
+        "<Space>ad",
+        M.pick("help"),
+        desc = " Diagnostic Help (CopilotChat)",
+        mode = { "n", "v" },
+      },
+      {
+        "<Space>ap",
+        M.pick("prompt"),
+        desc = " Prompt Actions (CopilotChat)",
+        mode = { "n", "v" },
+      },
       {
         "<Space>ax",
         function()
           return require("CopilotChat").reset()
         end,
         desc = " Reset (CopilotChat)",
+        mode = { "n", "v" },
       },
     },
   },
