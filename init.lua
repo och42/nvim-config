@@ -36,6 +36,7 @@ require("highlight-on-yank")
 require("i-shift-enter-inserts-newline-below")
 require("set-filetypes")
 require("shift-enter-goes-upward")
+require("yank-visual-selection-to-system-clipboard")
 
 require("filetype-go")
 require("netrw")
