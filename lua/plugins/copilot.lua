@@ -15,16 +15,12 @@ end
 return {
   {
     "github/copilot.vim",
-    keys = {
-      {
-        "<Space>as",
-        function()
-          vim.cmd("Copilot panel")
-        end,
-        desc = " Copilot suggestions",
-        mode = { "n", "v" },
-      },
-    }
+    config = function()
+      vim.keymap.set({"n", "v"}, "<Space>as", "<cmd>Copilot panel<CR>", {
+        desc = "Copilot suggestions",
+        silent = true
+      })
+    end,
   },
   {
     "CopilotC-Nvim/CopilotChat.nvim",
