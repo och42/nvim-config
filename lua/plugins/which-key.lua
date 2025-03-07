@@ -2,6 +2,7 @@ return {
   {
     "folke/which-key.nvim",
     opts = {
+      preset = "helix",
       spec = {
         { "<Space>a", group = " AI assistance…" },
         { "<Space>c", group = " Code…" },
