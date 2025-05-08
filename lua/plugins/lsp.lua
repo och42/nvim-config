@@ -8,11 +8,11 @@ return {
     "neovim/nvim-lspconfig",
   },
   {
-    "williamboman/mason.nvim",
+    "mason-org/mason.nvim",
     branch = "v1.x",
   },
   {
-    "williamboman/mason-lspconfig.nvim",
+    "mason-org/mason-lspconfig.nvim",
     branch = "v1.x",
 
     config = function()
