@@ -9,9 +9,11 @@ return {
   },
   {
     "williamboman/mason.nvim",
+    branch = "v1.x",
   },
   {
     "williamboman/mason-lspconfig.nvim",
+    branch = "v1.x",
 
     config = function()
       require("mason").setup({
