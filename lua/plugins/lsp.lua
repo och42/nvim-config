@@ -6,58 +6,55 @@ return {
   },
   {
     "neovim/nvim-lspconfig",
-  },
-  {
-    "mason-org/mason.nvim",
-    branch = "v1.x",
-  },
-  {
-    "mason-org/mason-lspconfig.nvim",
-    branch = "v1.x",
-
+    dependencies = {
+      "mason-org/mason.nvim",
+      "mason-org/mason-lspconfig.nvim",
+      "folke/lazydev.nvim",
+    },
     config = function()
+      vim.api.nvim_create_autocmd('LspAttach', {
+        group = vim.api.nvim_create_augroup('kickstart-lsp-attach', { clear = true }),
+        callback = function(event)
+          vim.keymap.set("n", "<C-k>", vim.lsp.buf.signature_help, { buffer = event.buf })
+          vim.keymap.set("n", "<Space>ca", vim.lsp.buf.code_action, { buffer = event.buf, desc = " Code Action" })
+          vim.keymap.set("n", "<Space>cf", vim.lsp.buf.format, { buffer = event.buf, desc = " Format" })
+          vim.keymap.set("n", "<Space>cr", vim.lsp.buf.rename, { buffer = event.buf, desc = " Rename" })
+        end
+      })
+
+      local servers = {
+        lua_ls = {
+          settings = {
+            Lua = {
+              workspace = { checkThirdParty = false },
+            },
+          }
+        },
+      }
+
+      -- nvim-cmp supports additional completion capabilities, so broadcast that to servers
+      local client_capabilities = vim.lsp.protocol.make_client_capabilities()
+      local capabilities        = require("cmp_nvim_lsp").default_capabilities(client_capabilities)
+      vim.lsp.config("*", { capabilities = capabilities })
+
+      for server, config in pairs(servers) do
+        -- This handles overriding only values explicitly passed
+        -- by the server configuration above. Useful when disabling
+        -- certain features of an LSP (for example, turning off formatting for ts_ls)
+        vim.lsp.config(server, config)
+        vim.lsp.enable(server)
+      end
+
       require("mason").setup({
         ui = {
           border = "rounded"
         }
       })
-
-      -- nvim-cmp supports additional completion capabilities, so broadcast that to servers
-      local client_capabilities = vim.lsp.protocol.make_client_capabilities()
-      local capabilities = require("cmp_nvim_lsp").default_capabilities(client_capabilities)
-
-      local lsp_servers_configurations = {
-        lua_ls = {
-          Lua = {
-            workspace = { checkThirdParty = false },
-          },
-        },
-      }
-
-      local mason_lspconfig = require("mason-lspconfig")
-      mason_lspconfig.setup({})
-      mason_lspconfig.setup_handlers({
-        function(server_name)
-          require("lspconfig")[server_name].setup({
-            capabilities = capabilities,
-            settings = lsp_servers_configurations[server_name],
-            on_attach = function(_, bufnr)
-              vim.keymap.set("n", "<C-k>", vim.lsp.buf.signature_help, { buffer = bufnr })
-              vim.keymap.set("n", "<Space>ca", vim.lsp.buf.code_action, { buffer = bufnr, desc = " Code Action" })
-              vim.keymap.set("n", "<Space>cf", vim.lsp.buf.format, { buffer = bufnr, desc = " Format" })
-              vim.keymap.set("n", "<Space>cr", vim.lsp.buf.rename, { buffer = bufnr, desc = " Rename" })
-            end,
-          })
-        end,
+      require("mason-lspconfig").setup({})
+      require("lazydev").setup({
+        ft = "lua",
+        enabled = true,
       })
     end,
-
-    dependencies = {
-      {
-        "folke/lazydev.nvim",
-        opts = {},
-        ft = "lua",
-      },
-    },
   },
 }
