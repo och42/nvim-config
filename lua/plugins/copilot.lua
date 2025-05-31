@@ -58,12 +58,6 @@ return {
         mode = { "n", "v" },
       },
       {
-        "<Space>ad",
-        M.pick("help"),
-        desc = " Diagnostic Help (CopilotChat)",
-        mode = { "n", "v" },
-      },
-      {
         "<Space>ap",
         M.pick("prompt"),
         desc = " Prompt Actions (CopilotChat)",
