@@ -1,17 +1,3 @@
-local M = {}
-
-function M.pick(kind)
-  return function()
-    local actions = require("CopilotChat.actions")
-    local items = actions[kind .. "_actions"]()
-    if not items then
-      vim.health.warn("No " .. kind .. " found on the current line")
-      return
-    end
-    require("CopilotChat.integrations.telescope").pick(items)
-  end
-end
-
 return {
   {
     "github/copilot.vim",
@@ -59,7 +45,9 @@ return {
       },
       {
         "<Space>ap",
-        M.pick("prompt"),
+        function ()
+          return require("CopilotChat").select_prompt()
+        end,
         desc = " Prompt Actions (CopilotChat)",
         mode = { "n", "v" },
       },
