@@ -20,21 +20,30 @@ return {
     dependencies = {
       { "nvim-lua/plenary.nvim" },
     },
-    opts = {
-      mappings = {
-        accept_diff = {
-          normal = "",
-          insert = "",
+    opts = function()
+      return {
+        mappings = {
+          accept_diff = {
+            normal = "",
+            insert = "",
+          },
+          reset = {
+            normal = "",
+            insert = "",
+          },
         },
-        reset = {
-          normal = "",
-          insert = "",
-        },
-      },
-      question_header = "  User ",
-      answer_header = "  Copilot ",
-      model = "claude-sonnet-4",
-    },
+        question_header = "  User ",
+        answer_header = "  Copilot ",
+        model = "claude-sonnet-4",
+        prompts = vim.tbl_deep_extend("force", require("CopilotChat.config.prompts"), {
+          Commit2 = {
+            prompt =
+            "Write commit message for the change. Start subject line with a verb in imperative mood. In the body, explain why the change is made. Try to keep the subject line under 50 characters and wrap message body at 72 characters. Format as a gitcommit code block.",
+            sticky = '#gitdiff:staged',
+          },
+        }),
+      }
+    end,
     keys = {
       {
         "<Space>aa",
