@@ -52,13 +52,17 @@ return {
     vim.keymap.set("n", "<Space>S", builtin.lsp_workspace_symbols, { desc = " Search Symbols (workspace)" })
     vim.keymap.set("n", "<Space>:", builtin.command_history, { desc = " Search Commands History" })
     vim.keymap.set("n", "<Space>f", builtin.find_files, { desc = " Search Filesystem" })
-    vim.keymap.set("n", "<Space>g", builtin.live_grep, { desc = " grep" })
     vim.keymap.set("n", "<Space>h", builtin.help_tags, { desc = " Search Help" })
     vim.keymap.set("n", "<Space>l", builtin.filetypes, { desc = " Languages Filetypes" })
     vim.keymap.set("n", "<Space>r", builtin.git_files, { desc = " Search Git Repo" })
     vim.keymap.set("n", "<Space>s", builtin.lsp_document_symbols, { desc = " Search Symbols (document)" })
     vim.keymap.set("n", "<Space>w", builtin.grep_string, { desc = " grep `word`" })
     vim.keymap.set("n", "<Space>z", builtin.spell_suggest, { desc = " Zpell suggestions" })
+
+    -- vim.keymap.set("n", "<Space>g", builtin.live_grep, { desc = " grep", additional_args = {"--hidden"} })
+    vim.keymap.set("n", "<Space>g", function()
+      builtin.live_grep({ additional_args = {"--hidden"} })
+    end, { desc = " grep" })
 
     vim.keymap.set("n", "<Space>F", function()
       builtin.find_files({ hidden = true })
