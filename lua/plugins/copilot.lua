@@ -2,7 +2,7 @@ return {
   {
     "github/copilot.vim",
     config = function()
-      vim.keymap.set({"n", "v"}, "<Space>as", "<cmd>Copilot panel<CR>", {
+      vim.keymap.set({ "n", "v" }, "<Space>as", "<cmd>Copilot panel<CR>", {
         desc = "Copilot suggestions",
         silent = true
       })
@@ -55,7 +55,7 @@ return {
       },
       {
         "<Space>ap",
-        function ()
+        function()
           return require("CopilotChat").select_prompt()
         end,
         desc = " Prompt Actions (CopilotChat)",
